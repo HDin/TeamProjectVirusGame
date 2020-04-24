@@ -1,6 +1,6 @@
 package gameState;
 
-import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Event {
 	
@@ -8,11 +8,12 @@ public class Event {
 	private Location location;
 	private double occurrenceProbability;
 	private boolean isSingleOccurrence;
-	private ArrayList<String> eventOptions;
+	private HashMap<String, Integer> eventOptions;
 	private Event followingEvent;
+	private String chosenOption;
 
 	
-	public Event(String name, Location location, double occurrenceProbability, boolean isSingleOccurrence, ArrayList<String> eventOptions, Event followingEvent) {
+	public Event(String name, Location location, double occurrenceProbability, boolean isSingleOccurrence, HashMap<String, Integer> eventOptions, Event followingEvent) {
 		this.name = name;
 		this.location = location;
 		this.occurrenceProbability = occurrenceProbability;
@@ -53,11 +54,11 @@ public class Event {
 		this.isSingleOccurrence = isSingleOccurence;
 	}
 	
-	public ArrayList<String> getEventOptions() {
+	public HashMap<String, Integer> getEventOptions() {
 		return eventOptions;
 	}
 	
-	public void setEventOptions(ArrayList<String> eventOptions) {
+	public void setEventOptions(HashMap<String, Integer> eventOptions) {
 		this.eventOptions = eventOptions;
 	}
 	
@@ -67,5 +68,13 @@ public class Event {
 	
 	public void setFollowingEvent(Event followingEvent) {
 		this.followingEvent = followingEvent;
+	}
+	
+	public String getChosenOption() {
+		return chosenOption;
+	}
+	
+	public void setOptionSelected(String chosenOption) {
+		this.chosenOption = chosenOption;
 	}
 }

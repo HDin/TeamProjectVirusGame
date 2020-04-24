@@ -18,8 +18,8 @@ public class EventController {
 	
 	public void chooseEventOption(EventChoice event) {
 		if(!(event == null)) {
-			GameState.getGameState().getCurrentEvent();
-			//what to do when event is chosen
+			int karma = GameState.getGameState().getCurrentEvent().getEventOptions().get(event.getChosenEventOption());
+			GameState.getGameState().adjustKarma(karma);
 		}
 	}
 
