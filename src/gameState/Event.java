@@ -8,11 +8,11 @@ public class Event {
 	private Location location;
 	private double occurrenceProbability;
 	private boolean isSingleOccurrence;
-	private ArrayList<EventOptions> eventOptions;
+	private ArrayList<String> eventOptions;
 	private Event followingEvent;
 
 	
-	public Event(String name, Location location, double occurrenceProbability, boolean isSingleOccurrence, ArrayList<EventOptions> eventOptions, Event followingEvent) {
+	public Event(String name, Location location, double occurrenceProbability, boolean isSingleOccurrence, ArrayList<String> eventOptions, Event followingEvent) {
 		this.name = name;
 		this.location = location;
 		this.occurrenceProbability = occurrenceProbability;
@@ -53,11 +53,11 @@ public class Event {
 		this.isSingleOccurrence = isSingleOccurence;
 	}
 	
-	public ArrayList<EventOptions> getEventOptions() {
+	public ArrayList<String> getEventOptions() {
 		return eventOptions;
 	}
 	
-	public void setEventOptions(ArrayList<EventOptions> eventOptions) {
+	public void setEventOptions(ArrayList<String> eventOptions) {
 		this.eventOptions = eventOptions;
 	}
 	

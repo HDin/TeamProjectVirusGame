@@ -9,6 +9,7 @@ public class GameState {
 	private Location currentLocation;
 	private Event currentEvent;
 	private Player player;
+	private int daysPlayed;
 	private double globalIllnessModifier;
 	private int karma;
 	
@@ -18,6 +19,7 @@ public class GameState {
 		currentLocation = new Location("home", (new Location("shop", null, null, currentLocation, null)), null, null, null);
 		currentEvent = null;
 		player = new Player("Test", 21, 70);
+		daysPlayed = 0;
 		globalIllnessModifier = 0.12;
 		karma = 0;
 		events = new ArrayList<>();
@@ -53,6 +55,14 @@ public class GameState {
 	
 	public void setCurrentEvent(Event currentEvent) {
 		this.currentEvent = currentEvent;
+	}
+	
+	public int getDaysPlayed() {
+		return daysPlayed;
+	}
+	
+	public void increaseDaysPlayed() {
+		daysPlayed++;
 	}
 	
 	public double getGlobalIllnessModifier() {
